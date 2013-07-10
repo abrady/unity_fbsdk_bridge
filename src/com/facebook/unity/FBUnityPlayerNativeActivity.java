@@ -1,0 +1,24 @@
+package com.facebook.unity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+
+import com.facebook.Session;
+import com.unity3d.player.UnityPlayerNativeActivity;
+
+public class FBUnityPlayerNativeActivity extends UnityPlayerNativeActivity {
+	static final String TAG = FBUnityPlayerNativeActivity.class.getCanonicalName();
+	@Override
+	protected void onCreate(Bundle arg0) {
+		super.onCreate(arg0);
+		Log.d(TAG, "!! onCreate called");
+	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	  Log.d(TAG,"onActivityResult: requestCode: "+requestCode+", resultCode:"+resultCode+" intent data: "+data.toString());
+	  super.onActivityResult(requestCode, resultCode, data);
+	  Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
+	}	
+}
