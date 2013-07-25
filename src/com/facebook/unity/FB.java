@@ -23,7 +23,7 @@ public class FB {
 	private static boolean DEBUG_UI = true;
 	private static final String TAG = "FBUnitySDK";
 	// i.e. the game object that receives this message
-	private static final String FB_UNITY_OBJECT = "Main Camera";
+	private static final String FB_UNITY_OBJECT = "Facebook";
 	private static Session session;
 	
 	// if we have a session it has been opened.
